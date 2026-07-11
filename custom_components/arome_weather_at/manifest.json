@@ -1,5 +1,5 @@
 {
-  "domain": "geosphere_arome",
+  "domain": "arome_weather_at",
   "name": "AROME Weather AT (Open-Meteo)",
   "codeowners": ["@fhainz"],
   "config_flow": true,
@@ -9,5 +9,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/fhainz/GeoSphere-Arome/issues",
   "requirements": [],
-  "version": "0.1.1"
+  "version": "0.2.0"
 }

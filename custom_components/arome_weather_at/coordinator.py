@@ -45,7 +45,7 @@ class GeosphereAromeCoordinator(DataUpdateCoordinator[GeosphereAromeData]):
         super().__init__(
             hass,
             LOGGER,
-            name="geosphere_arome",
+            name="arome_weather_at",
             update_interval=datetime.timedelta(minutes=UPDATE_INTERVAL_MINUTES),
         )
         self._latitude = latitude

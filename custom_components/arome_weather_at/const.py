@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 
-DOMAIN = "geosphere_arome"
+DOMAIN = "arome_weather_at"
 LOGGER = logging.getLogger(__package__)
 
 API_URL = "https://api.open-meteo.com/v1/forecast"
