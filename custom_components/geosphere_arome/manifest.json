@@ -1,6 +1,6 @@
 {
   "domain": "geosphere_arome",
-  "name": "GeoSphere Austria AROME (via Open-Meteo)",
+  "name": "AROME Weather AT (Open-Meteo)",
   "codeowners": ["@fhainz"],
   "config_flow": true,
   "dependencies": [],
@@ -9,5 +9,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/fhainz/GeoSphere-Arome/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

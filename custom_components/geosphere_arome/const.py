@@ -14,7 +14,7 @@ CONF_NAME = "name"
 CONF_LATITUDE = "latitude"
 CONF_LONGITUDE = "longitude"
 
-DEFAULT_NAME = "GeoSphere Austria AROME"
+DEFAULT_NAME = "AROME Weather AT"
 
 UPDATE_INTERVAL_MINUTES = 15
 
