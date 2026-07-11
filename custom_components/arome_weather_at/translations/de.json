@@ -13,5 +13,18 @@
     "abort": {
       "already_configured": "Für diesen Standort ist bereits eine Instanz konfiguriert"
     }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": { "name": "Temperatur" },
+      "apparent_temperature": { "name": "Gefühlte Temperatur" },
+      "humidity": { "name": "Luftfeuchte" },
+      "cloud_coverage": { "name": "Bewölkung" },
+      "pressure": { "name": "Luftdruck" },
+      "wind_speed": { "name": "Windgeschwindigkeit" },
+      "wind_gust_speed": { "name": "Windböen" },
+      "wind_bearing": { "name": "Windrichtung" },
+      "precipitation": { "name": "Niederschlag" }
+    }
   }
 }

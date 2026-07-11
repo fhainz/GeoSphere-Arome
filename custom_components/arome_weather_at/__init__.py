@@ -8,7 +8,7 @@ from homeassistant.core import HomeAssistant
 from .const import CONF_LATITUDE, CONF_LONGITUDE
 from .coordinator import GeosphereAromeCoordinator
 
-PLATFORMS = ["weather"]
+PLATFORMS = ["weather", "sensor"]
 
 GeosphereAromeConfigEntry = ConfigEntry[GeosphereAromeCoordinator]
 

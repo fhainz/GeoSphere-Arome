@@ -44,6 +44,10 @@ wird (z.B. als Wetterquelle in HA-Add-ons).
   bei `zamg` gar nicht
 - 💨 Windgeschwindigkeit **und** Windböen (`wind_gust_speed`)
 - 📈 Stündlicher Forecast (60h) und Tages-Forecast (3 Tage)
+- 🌡️ Zusätzlich **Einzelsensoren** (`sensor.*`) für Temperatur, gefühlte
+  Temperatur, Luftfeuchte, Bewölkung, Luftdruck, Windgeschwindigkeit,
+  Windböen, Windrichtung, Niederschlag — für Automationen/Graphen ohne
+  Attribut-Zugriff auf die weather-Entity
 - 🎯 Standort frei wählbar (Config Flow), vorbelegt mit der HA-Heimatzone
 - 1 API-Call pro Update-Zyklus (Standard 15 min) liefert Current + Hourly +
   Daily gemeinsam — kein unnötiger Traffic
@@ -54,22 +58,23 @@ wird (z.B. als Wetterquelle in HA-Add-ons).
 
 1. HACS → ⋮ → *Custom repositories* → hinzufügen:
    `https://github.com/fhainz/GeoSphere-Arome` als Typ *Integration*.
-2. **GeoSphere Austria AROME (via Open-Meteo)** installieren und Home
-   Assistant neu starten.
+2. **AROME Weather AT (Open-Meteo)** installieren und Home Assistant neu
+   starten.
 
 ### Manuell
 
-`custom_components/geosphere_arome/` nach `/config/custom_components/`
+`custom_components/arome_weather_at/` nach `/config/custom_components/`
 kopieren und Home Assistant neu starten.
 
 ## Setup
 
 1. *Einstellungen → Geräte & Dienste → Integration hinzufügen* →
-   **GeoSphere Austria AROME**
+   **AROME Weather AT**
 2. Name vergeben, Breiten-/Längengrad prüfen (vorbelegt mit der HA-Heimatzone,
    frei änderbar — Abdeckung: Mitteleuropa gemäß AROME-Modellgebiet).
 3. Fertig — die `weather.*`-Entity kann sofort z.B. als `weather_entity` in
-   anderen Integrationen/Add-ons eingetragen werden.
+   anderen Integrationen/Add-ons eingetragen werden; die Einzelsensoren
+   erscheinen automatisch am selben Gerät.
 
 ## Datenherkunft
 
