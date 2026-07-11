@@ -7,7 +7,6 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import selector
 
 from .const import CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME, DEFAULT_NAME, DOMAIN
 
@@ -25,6 +24,10 @@ class GeosphereAromeConfigFlow(ConfigFlow, domain=DOMAIN):
             self._abort_if_unique_id_configured()
             return self.async_create_entry(title=user_input[CONF_NAME], data=user_input)
 
+        # selector.NumberSelector fuehrt auf dieser HA-Version beim allerersten
+        # Anzeigen des Formulars zu einem stillen 400 (per Bisektion isoliert,
+        # siehe fhainz/aromewx-test) -- daher bewusst reines Voluptuous statt
+        # selector.NumberSelector als Workaround.
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema(
@@ -32,14 +35,10 @@ class GeosphereAromeConfigFlow(ConfigFlow, domain=DOMAIN):
                     vol.Required(CONF_NAME, default=DEFAULT_NAME): str,
                     vol.Required(
                         CONF_LATITUDE, default=self.hass.config.latitude
-                    ): selector.NumberSelector(
-                        selector.NumberSelectorConfig(step=0.0001, mode=selector.NumberSelectorMode.BOX)
-                    ),
+                    ): vol.Coerce(float),
                     vol.Required(
                         CONF_LONGITUDE, default=self.hass.config.longitude
-                    ): selector.NumberSelector(
-                        selector.NumberSelectorConfig(step=0.0001, mode=selector.NumberSelectorMode.BOX)
-                    ),
+                    ): vol.Coerce(float),
                 }
             ),
         )
