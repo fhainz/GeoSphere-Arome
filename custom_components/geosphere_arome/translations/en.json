@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "AROME weather model from GeoSphere Austria via the Open-Meteo API (no API key needed). Location is prefilled from the HA home zone.",
+        "data": {
+          "name": "Name",
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "An instance for this location is already configured"
+    }
+  }
+}
